@@ -1,0 +1,296 @@
+:root {
+  --header-ff: "Raleway", sans-serif;
+  --body-ff: "Open Sans", sans-serif;
+  --sub-footer: hsl(238, 22%, 44%);
+  --final-footer: hsl(243, 87%, 12%);
+  --button-color: hsl(224, 93%, 58%);
+  --in-link: hsl(170, 45%, 43%);
+  --body-bg: hsl(240, 75%, 98%);
+  --card-color: hsl(0, 0%, 75%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--body-ff);
+}
+
+body {
+  background-color: var(--body-bg);
+}
+/* navigation bar */
+nav {
+  width: 95%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.nav-menu {
+  width: 17rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div.nav-menu a {
+  text-decoration: none;
+  color: black;
+  font-family: var(--body-ff);
+}
+
+/* top container */
+div.container {
+  display: grid;
+  grid-template-columns: auto;
+  width: 95%;
+  margin: 10px auto;
+}
+div.top-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+div.top-left-container,
+div.bottom-left-container {
+  width: 50%;
+  align-self: center;
+}
+div.top-left-container h1,
+div.bottom-left-container h1 {
+  font-family: var(--header-ff);
+  font-size: 2.2rem;
+  width: 80%;
+}
+div.top-left-container p,
+div.bottom-left-container p {
+  font-family: var(--body-ff);
+  margin: 20px 0;
+  width: 75%;
+  font-size: 1.05em;
+}
+div.top-left-container form {
+  width: 70%;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+div.top-left-container input {
+  padding: 10px 15px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+}
+button {
+  padding: 10px;
+  background: var(--button-color);
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
+  color: white;
+  font-weight: 600;
+  box-shadow: 1px 1px 5px -2px var(--in-link);
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}
+div.top-right-container,
+div.bottom-right-container {
+  width: 48%;
+  align-self: center;
+}
+div.top-right-container img,
+div.bottom-right-container img {
+  width: 100%;
+}
+
+div.bottom-container {
+  width: 100%;
+  display: flex;
+  height: 90vh;
+  justify-content: space-between;
+  margin: 250px 0 20px 0;
+}
+div.bottom-left-container a {
+  text-decoration: none;
+  color: var(--in-link);
+  vertical-align: middle;
+  position: relative;
+}
+div.bottom-left-container a:hover {
+  opacity: 0.8;
+}
+div.bottom-left-container a::after {
+  content: "";
+  width: 100%;
+  height: 1%;
+  background: green;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+div.bottom-left-container a img {
+  vertical-align: middle;
+}
+
+div.bottom-card {
+  padding: 20px;
+  width: 55%;
+  display: grid;
+  margin-top: 200px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 1px 1px 7px -3px black;
+}
+div.bottom-card > p {
+  width: 100%;
+  font-family: var(--body-ff);
+  font-size: 1.1rem;
+  line-height: 1.5em;
+}
+div.card-user {
+  display: flex;
+  align-items: center;
+}
+div.card-user img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+div.card-user span {
+  /* come back for this when i'm done with styling */
+  font-size: 0px;
+  width: 100%;
+}
+div.card-user span > h4 {
+  font-size: 0.8em;
+}
+div.card-user span > p {
+  font-size: 0.5em;
+}
+
+/* the footer styling */
+footer {
+  /* background: red; */
+}
+
+div.top-footer {
+  background: var(--sub-footer);
+  width: 100%;
+  margin: 100px auto 0 auto;
+  display: flex;
+  padding: 60px 40px;
+}
+div.top-left-footer {
+  width: 50%;
+}
+div.top-right-footer {
+  width: 50%;
+  text-align: -webkit-right;
+}
+div.top-right-footer form {
+  display: grid;
+  padding: 10px;
+  width: 80%;
+  row-gap: 10px;
+}
+div.top-right-footer form input {
+  width: 100%;
+  /* padding: 10px; */
+  padding: 10px 15px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+}
+
+div.top-right-footer form button {
+  width: fit-content;
+}
+div.top-left-footer p {
+  font-family: var(--body-ff);
+  margin: 20px 0;
+  width: 75%;
+  font-size: 1.1em;
+  color: white;
+}
+
+div.top-left-footer h2 {
+  font-family: var(--header-ff);
+  font-size: 2.2rem;
+  width: 80%;
+  color: white;
+}
+
+div.bottom-footer {
+  background: var(--final-footer);
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 30px;
+  padding: 60px 40px;
+}
+div.logo-image {
+  /* filter: opacity(1) drop-shadow(0 0 1px red); */
+  /* come back to this , it is essential */
+}
+
+div.footer-links {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+div.digital-links {
+  height: 50%;
+  display: grid;
+  gap: 10px;
+}
+.digital-links a {
+  color: white;
+  text-decoration: none;
+}
+.digital-links a > img {
+  margin-right: 10px;
+}
+div.web-links {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  width: 25%;
+  row-gap: 10px;
+}
+
+div.web-links a {
+  text-decoration: none;
+  color: white;
+}
+
+footer a:hover,
+div.icon-links a:hover {
+  color: var(--button-color);
+}
+div.icon-links {
+  display: flex;
+}
+
+div.icon-links a {
+  color: white;
+  border: 1px solid white;
+  margin: 0 0.3em;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  position: relative;
+}
+
+div.icon-links a i {
+  position: absolute;
+  left: 0.5em;
+  top: 0.4em;
+}
+div.icon-links a:first-child i {
+  left: 0.6em;
+}
+div.icon-links a:hover {
+  border: 1px solid var(--button-color);
+}
