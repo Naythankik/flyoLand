@@ -18,6 +18,9 @@
 body {
   background-color: var(--body-bg);
 }
+div.parent-container {
+  display: block;
+}
 /* navigation bar */
 nav {
   width: 95%;
@@ -48,6 +51,7 @@ div.container {
 div.top-container {
   width: 100%;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   margin: 20px 0;
 }
@@ -78,7 +82,7 @@ div.top-left-container form {
 div.top-left-container input {
   padding: 10px 15px;
   outline: none;
-  border: 1px solid black;
+  border: 1px solid grey;
   border-radius: 0.2rem;
 }
 button {
@@ -109,8 +113,12 @@ div.bottom-container {
   width: 100%;
   display: flex;
   height: 90vh;
+  flex-direction: row-reverse;
   justify-content: space-between;
-  margin: 250px 0 20px 0;
+  margin: 70px 0 20px 0;
+  background: url("./images/bg-curve-desktop.svg") no-repeat;
+  background-position: top;
+  background-size: contain;
 }
 div.bottom-left-container a {
   text-decoration: none;
@@ -139,42 +147,39 @@ div.bottom-card {
   padding: 20px;
   width: 55%;
   display: grid;
-  margin-top: 200px;
+  margin-top: 70px;
   border-radius: 10px;
   background: white;
-  box-shadow: 1px 1px 7px -3px black;
+  box-shadow: 1px 1px 7px -3px grey;
 }
 div.bottom-card > p {
   width: 100%;
   font-family: var(--body-ff);
   font-size: 1.1rem;
-  line-height: 1.5em;
 }
 div.card-user {
   display: flex;
   align-items: center;
 }
 div.card-user img {
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 }
-div.card-user span {
-  /* come back for this when i'm done with styling */
-  font-size: 0px;
+div.card-title {
   width: 100%;
+  margin-left: 10px;
 }
-div.card-user span > h4 {
-  font-size: 0.8em;
+div.card-title > h4 {
+  font-size: 0.9em;
+  font-weight: bolder;
+  margin: 0;
 }
-div.card-user span > p {
-  font-size: 0.5em;
+div.card-title > p {
+  font-size: 0.7em;
+  margin: 0;
 }
-
 /* the footer styling */
-footer {
-  /* background: red; */
-}
 
 div.top-footer {
   background: var(--sub-footer);
@@ -188,7 +193,7 @@ div.top-left-footer {
 }
 div.top-right-footer {
   width: 50%;
-  text-align: -webkit-right;
+  /* text-align: -webkit-right; */
 }
 div.top-right-footer form {
   display: grid;
@@ -198,7 +203,6 @@ div.top-right-footer form {
 }
 div.top-right-footer form input {
   width: 100%;
-  /* padding: 10px; */
   padding: 10px 15px;
   outline: none;
   border: 1px solid black;
@@ -230,11 +234,9 @@ div.bottom-footer {
   row-gap: 30px;
   padding: 60px 40px;
 }
-div.logo-image {
-  /* filter: opacity(1) drop-shadow(0 0 1px red); */
-  /* come back to this , it is essential */
+.fylo-image {
+  filter: invert(1);
 }
-
 div.footer-links {
   display: flex;
   justify-content: space-between;
@@ -293,4 +295,183 @@ div.icon-links a:first-child i {
 }
 div.icon-links a:hover {
   border: 1px solid var(--button-color);
+}
+
+@media only screen and (max-width: 960px) {
+  div.container {
+    margin-top: 50px;
+  }
+
+  div.top-container,
+  div.bottom-container {
+    display: grid;
+    grid-template-columns: auto;
+    height: auto;
+  }
+  div.bottom-container {
+    background: url("./images/bg-curve-mobile.svg") no-repeat;
+  }
+  div.top-left-container,
+  div.top-right-container,
+  div.bottom-left-container,
+  div.bottom-right-container {
+    width: 100%;
+    text-align: center;
+  }
+  div.top-left-container h1,
+  div.bottom-left-container h1 {
+    width: 90%;
+    margin: 0 auto;
+  }
+  div.top-left-container p,
+  div.bottom-left-container p {
+    margin: 20px auto;
+    width: 85%;
+  }
+  div.top-left-container form {
+    width: 85%;
+    margin: 0 auto;
+    grid-template-columns: auto;
+  }
+  div.top-left-container input {
+    width: 100%;
+  }
+  div.bottom-left-container p {
+    text-align: left;
+  }
+  div.bottom-card {
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 1px 1px 7px -3px grey;
+  }
+  div.bottom-card p {
+    width: auto;
+  }
+
+  div.top-footer {
+    margin: 0 auto;
+    display: grid;
+    padding: 40px;
+  }
+  div.top-left-footer {
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  div.top-left-footer h2,
+  div.top-left-footer p {
+    margin: 10px auto;
+  }
+  div.top-right-footer,
+  div.top-right-footer form button {
+    width: 100%;
+  }
+
+  div.top-right-footer form {
+    margin: 0 auto;
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav img {
+    width: 60%;
+  }
+
+  div.nav-menu {
+    width: 13rem;
+  }
+  div.bottom-container {
+    height: auto;
+  }
+  div.bottom-card {
+    width: 80%;
+  }
+  div.bottom-card > p {
+    margin: 5px 0;
+    font-size: 12px;
+  }
+  div.card-user {
+    display: flex;
+    align-items: center;
+  }
+  div.card-user img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  div.card-title {
+    width: 100%;
+    margin-left: 10px;
+  }
+  div.card-title > h4 {
+    text-align: left;
+  }
+  div.card-title > p {
+    margin: 0;
+  }
+  div.top-footer {
+    padding: 20px;
+  }
+
+  div.top-left-container h1,
+  div.bottom-left-container h1,
+  div.top-left-container,
+  div.bottom-left-container,
+  div.top-left-footer h2,
+  div.top-left-footer,
+  div.top-left-footer p,
+  div.top-right-footer {
+    width: 100%;
+  }
+  div.top-right-footer form {
+    width: 90%;
+  }
+  div.bottom-footer {
+    background: var(--final-footer);
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 30px;
+    padding: 60px 40px;
+  }
+
+  div.footer-links {
+    display: grid;
+    row-gap: 15px;
+    justify-content: unset;
+    width: 100%;
+  }
+  div.digital-links {
+    gap: 15px;
+    height: auto;
+  }
+
+  .digital-links a > img {
+    vertical-align: sub;
+  }
+  div.web-links {
+    grid-template-columns: auto;
+    width: 100%;
+    row-gap: 10px;
+  }
+
+  footer a:hover,
+  div.icon-links a:hover {
+    color: var(--button-color);
+  }
+  div.icon-links {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  nav img {
+    width: 80%;
+  }
+
+  div.nav-menu {
+    width: 30rem;
+  }
 }
